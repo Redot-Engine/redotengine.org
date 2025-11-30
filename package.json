@@ -1,0 +1,21 @@
+{
+  "name": "redotengine.org",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node dev.js",
+    "generate": "node generate.js",
+    "generate-all": "node generate.js && node sitemap.js && node feed.js",
+    "generate-sitemap": "node generate.js && node sitemap.js",
+    "sitemap": "node sitemap.js",
+    "feed": "node feed.js",
+    "backoffice": "node backoffice.js"
+  },
+  "dependencies": {
+    "rinojs": "^2.18.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
