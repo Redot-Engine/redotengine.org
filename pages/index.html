@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <component @path="/common/head" />
+    <component rino-path="/common/head" />
     <link rel="stylesheet" href="/styles/index.css" />
     <script type="text/javascript" src="/scripts/hello.js"></script>
     <script type="text/javascript" src="/scripts/helloTS.js"></script>
+    <script type="text/javascript" src="/scripts/bloggerPosts.js"></script>
 
     <title>Redot Engine – Home</title>
     <meta
@@ -33,7 +34,11 @@
         <a href="/" class="brand-logo">
           <div class="brand-logo-box">
             <span class="brand-logo-mark">
-              <img alt="Redot Engine Logo" style="color:transparent" src="/Redot Logo.svg">
+              <img
+                alt="Redot Engine Logo"
+                style="color: transparent"
+                src="/Redot Logo.svg"
+              />
             </span>
           </div>
           <div class="brand-logo-text">
@@ -75,11 +80,12 @@
           <div class="hero-content">
             <p class="hero-eyebrow">Your free, open-source game engine</p>
             <h1 class="hero-title">
-              Game Engine, <br/> <span class="hero-title-accent">Game Changer.</span>
+              Game Engine, <br />
+              <span class="hero-title-accent">Game Changer.</span>
             </h1>
             <p class="hero-lede">
-              Build 2D &amp; 3D games, tools, and cross-platform experiences with
-              a fast, open engine made for every creator.
+              Build 2D &amp; 3D games, tools, and cross-platform experiences
+              with a fast, open engine made for every creator.
             </p>
 
             <div class="hero-actions">
@@ -113,23 +119,163 @@
         </div>
       </section>
 
-      <!-- Example section to anchor from "Explore features" -->
-      <section id="features" class="section section-features">
+      <section class="section home-message-section">
         <div class="section-inner">
-        <div class="section-header">
-          <h2>Powering your game development</h2>
-          <p>Scene system, visual scripting, asset pipelines, and more.</p>
+          <div class="section-header">
+            <h2 class="hero-ink center">
+              Redot Engine is an innovative game engine that gives life to your
+              imagination. Build precise and interactive games with unmatched
+              liberty!
+            </h2>
+          </div>
         </div>
-        <!-- cards go here -->
-         </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2>Powering your game development 🚀</h2>
+            <p>
+              Unlock endless possibilities with our flexible and
+              high-performance game engine for every creator.
+            </p>
+          </div>
+          <img alt="Product Image" src="/productImage.webp" />
+        </div>
+      </section>
+
+      <section class="section section-features">
+        <div class="section-inner">
+          <header class="section-header">
+            <h2>Redot Engine’s Powerful Features ✨</h2>
+            <p>
+              Discover cutting-edge tools and capabilities designed to bring
+              your game ideas to life effortlessly.
+            </p>
+          </header>
+
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">🖼️</div>
+              <h3>Scene-driven design</h3>
+              <p>
+                Create reusable scenes with nodes, scripts, and clear game logic
+                via a powerful node hierarchy.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">💻</div>
+              <h3>Cross-platform development</h3>
+              <p>
+                Develop once and deploy to desktop, mobile, and web with ease.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">🟧</div>
+              <h3>2D & 3D engines</h3>
+              <p>
+                Build performant 2D games and immersive 3D worlds with the same
+                toolset.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">🔓</div>
+              <h3>Open Source experience</h3>
+              <p>
+                Fully open development where contributors collaborate and share
+                equally.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="latest-blog" class="section section-latest-blog">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2>Latest blog posts 📰</h2>
+            <p>
+              Stay updated with the latest news, tutorials, and insights from
+              the Redot community.
+            </p>
+          </div>
+          <div id="latest-blog-list" class="latest-blog-list"></div>
+        </div>
+      </section>
+
+      <section class="section section-testimonials">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2>What our users say 💬</h2>
+            <p>"MAKE GAME! 😍"</p>
+          </div>
+
+          <div class="quote-orbit">
+            <div class="quote-center">
+              <span>Redot ❤️ Devs</span>
+            </div>
+            <div class="quote-item">
+              “I noticed that… there is more MAK GAM here.”
+            </div>
+            <div class="quote-item">
+              “Well put. The @Redot_Engine community is one of the best I've
+              ever been a part of.”
+            </div>
+            <div class="quote-item">“Redot is the beast.”</div>
+            <div class="quote-item">“Everyone on my river uses Redot.”</div>
+            <div class="quote-item">
+              “It’s easy to get started and use. Active, positive community
+              makes it easy to learn.”
+            </div>
+            <div class="quote-item">
+              “Redot is the pinnacle of engines, finally a community of devs who
+              talk about code!”
+            </div>
+            <div class="quote-item">
+              “The only thing holding me back in Redot is my coding skills.”
+            </div>
+            <div class="quote-item">“Good engine, I like it.”</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section ready-to-create-section">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2>Ready to create? 🛠️</h2>
+            <p>
+              Create captivating 2D and 3D games with Redot Engine for
+              cross-platform immersive experiences.
+            </p>
+          </div>
+          <a href="download.html" class="btn-square btn-primary">Download</a>
+          <a
+            href="https://docs.redotengine.org/"
+            class="btn-square btn-dark-grey"
+          >
+            Explore Redot Engine Docs
+          </a>
+        </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="footer-inner">
         <div class="footer-brand">
-          <span class="footer-logo"><img alt="Redot Engine Logo" width="12" height="12" style="color:transparent; fill: white;" src="/Redot Logo Black.svg"></span>
-          <span class="footer-text">© 2024-present by the contributors of the Redot community</span>
+          <span class="footer-logo">
+            <img
+              alt="Redot Engine Logo"
+              width="12"
+              height="12"
+              src="/Redot Logo Black.svg"
+            />
+          </span>
+          <span class="footer-text">
+            © 2024-present by the contributors of the Redot community
+          </span>
         </div>
         <div class="footer-links">
           <a href="licenses.html">Licenses</a>
@@ -138,4 +284,5 @@
         </div>
       </div>
     </footer>
+  </body>
 </html>
