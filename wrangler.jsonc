@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "redotengine-org",
+  "compatibility_date": "2025-12-20",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  }
+}
