@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <component rino-path="/common/head" />
+    <link rel="stylesheet" href="/styles/index.css" />
+    <script type="text/javascript" src="/scripts/hello.js"></script>
+    <script type="text/javascript" src="/scripts/helloTS.js"></script>
+    <script type="text/javascript" src="/scripts/bloggerPosts.js"></script>
+
+    <title>Redot Engine – Home</title>
+    <meta
+      name="description"
+      content="Fast learning, preprocessing, intuitive web framework. Rino.js"
+    />
+    <meta name="og:title" content="Redot Engine – Home" />
+    <meta
+      name="og:description"
+      content="Fast learning, preprocessing, intuitive web framework. Rino.js"
+    />
+    <!-- 
+    <meta name="og:site_name" content="Site Name" />
+    <meta name="og:url" content="https://sitename/" />
+    <meta name="og:image" content=""/>
+    -->
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- Logo -->
+        <a href="/" class="brand-logo">
+          <div class="brand-logo-box">
+            <span class="brand-logo-mark">
+              <img
+                alt="Redot Engine Logo"
+                style="color: transparent"
+                src="/Redot Logo.svg"
+              />
+            </span>
+          </div>
+          <div class="brand-logo-text">
+            <span class="brand-wordmark">Redot Engine</span>
+            <span class="brand-tagline">Open-source game engine</span>
+          </div>
+        </a>
+
+        <!-- Nav -->
+        <nav class="main-nav" aria-label="Primary navigation">
+          <button class="nav-toggle" aria-label="Toggle navigation">
+            <span class="nav-toggle-line"></span>
+            <span class="nav-toggle-line"></span>
+          </button>
+
+          <ul class="nav-list">
+            <li>
+              <a href="index.html" class="nav-link nav-link-active">Home</a>
+            </li>
+            <li><a href="download.html" class="nav-link">Download</a></li>
+            <li><a href="licenses.html" class="nav-link">Licenses</a></li>
+            <li><a href="team.html" class="nav-link">Team</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li>
+              <a href="terms.html" class="nav-link nav-link-muted">Terms</a>
+            </li>
+            <li>
+              <a href="privacy.html" class="nav-link nav-link-muted">Privacy</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Page-specific content goes here -->
+      <section class="hero">
+        <div class="section-inner hero-inner">
+          <div class="hero-content">
+            <p class="hero-eyebrow">Your free, open-source game engine</p>
+            <h1 class="hero-title">
+              Game Engine, <br />
+              <span class="hero-title-accent">Game Changer.</span>
+            </h1>
+            <p class="hero-lede">
+              Build 2D &amp; 3D games, tools, and cross-platform experiences
+              with a fast, open engine made for every creator.
+            </p>
+
+            <div class="hero-actions">
+              <a href="download.html" class="btn btn-primary">Download</a>
+              <a href="#features" class="btn btn-ghost">Explore features</a>
+            </div>
+
+            <div class="hero-meta">
+              <span class="hero-chip">Open source</span>
+              <span class="hero-chip">2D &amp; 3D</span>
+              <span class="hero-chip">Cross-platform</span>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-card">
+              <div class="hero-code-header">
+                <span class="hero-dot"></span>
+                <span class="hero-dot"></span>
+                <span class="hero-dot"></span>
+                <span class="hero-code-title">main.gd</span>
+              </div>
+              <pre class="hero-code-block"><code class="code">
+  extends Node2D
+
+  func _ready() -> void:
+      print("Hello, Redot!")
+            </code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section home-message-section">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="hero-ink center">
+              Redot Engine is an innovative game engine that gives life to your
+              imagination. Build precise and interactive games with unmatched
+              liberty!
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2>Powering your game development 🚀</h2>
+            <p>
+              Unlock endless possibilities with our flexible and
+              high-performance game engine for every creator.
+            </p>
+          </div>
+          <img alt="Product Image" src="/productImage.webp" />
+        </div>
+      </section>
+
+      <section class="section section-features">
+        <div class="section-inner">
+          <header class="section-header">
+            <h2>Redot Engine’s Powerful Features ✨</h2>
+            <p>
+              Discover cutting-edge tools and capabilities designed to bring
+              your game ideas to life effortlessly.
+            </p>
+          </header>
+
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">🖼️</div>
+              <h3>Scene-driven design</h3>
+              <p>
+                Create reusable scenes with nodes, scripts, and clear game logic
+                via a powerful node hierarchy.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">💻</div>
+              <h3>Cross-platform development</h3>
+              <p>
+                Develop once and deploy to desktop, mobile, and web with ease.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">🟧</div>
+              <h3>2D & 3D engines</h3>
+              <p>
+                Build performant 2D games and immersive 3D worlds with the same
+                toolset.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">🔓</div>
+              <h3>Open Source experience</h3>
+              <p>
+                Fully open development where contributors collaborate and share
+                equally.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="latest-blog" class="section section-latest-blog">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2>Latest blog posts 📰</h2>
+            <p>
+              Stay updated with the latest news, tutorials, and insights from
+              the Redot community.
+            </p>
+          </div>
+          <div id="latest-blog-list" class="latest-blog-list"></div>
+        </div>
+      </section>
+
+      <section class="section section-testimonials">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2>What our users say 💬</h2>
+            <p>"MAKE GAME! 😍"</p>
+          </div>
+
+          <div class="quote-orbit">
+            <div class="quote-center">
+              <span>Redot ❤️ Devs</span>
+            </div>
+            <div class="quote-item">
+              “I noticed that… there is more MAK GAM here.”
+            </div>
+            <div class="quote-item">
+              “Well put. The @Redot_Engine community is one of the best I've
+              ever been a part of.”
+            </div>
+            <div class="quote-item">“Redot is the beast.”</div>
+            <div class="quote-item">“Everyone on my river uses Redot.”</div>
+            <div class="quote-item">
+              “It’s easy to get started and use. Active, positive community
+              makes it easy to learn.”
+            </div>
+            <div class="quote-item">
+              “Redot is the pinnacle of engines, finally a community of devs who
+              talk about code!”
+            </div>
+            <div class="quote-item">
+              “The only thing holding me back in Redot is my coding skills.”
+            </div>
+            <div class="quote-item">“Good engine, I like it.”</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section ready-to-create-section">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2>Ready to create? 🛠️</h2>
+            <p>
+              Create captivating 2D and 3D games with Redot Engine for
+              cross-platform immersive experiences.
+            </p>
+          </div>
+          <a href="download.html" class="btn-square btn-primary">Download</a>
+          <a
+            href="https://docs.redotengine.org/"
+            class="btn-square btn-dark-grey"
+          >
+            Explore Redot Engine Docs
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">
+            <img
+              alt="Redot Engine Logo"
+              width="12"
+              height="12"
+              src="/Redot Logo Black.svg"
+            />
+          </span>
+          <span class="footer-text">
+            © 2024-present by the contributors of the Redot community
+          </span>
+        </div>
+        <div class="footer-links">
+          <a href="licenses.html">Licenses</a>
+          <a href="terms.html">Terms</a>
+          <a href="privacy.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

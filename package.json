@@ -1,0 +1,24 @@
+{
+  "name": "redotengine.org",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node fetchXMLFeedToJSON.js && node dev.js",
+    "generate": "node generate.js",
+    "generate-all": "node generate.js && node sitemap.js && node feed.js",
+    "generate-sitemap": "node generate.js && node sitemap.js",
+    "sitemap": "node sitemap.js",
+    "feed": "node feed.js",
+    "backoffice": "node backoffice.js",
+    "blogger-feed": "node fetchXMLFeedToJSON.js",
+    "generate-redot": "node fetchXMLFeedToJSON.js && node generate.js && node sitemap.js"
+  },
+  "dependencies": {
+    "rinojs": "^2.19.0",
+    "xml-js": "^1.6.11"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
