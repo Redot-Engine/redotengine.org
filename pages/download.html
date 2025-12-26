@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <component rino-path="/common/head" />
+
+    <title>Redot Engine – Home</title>
+    <meta
+      name="description"
+      content="Fast learning, preprocessing, intuitive web framework. Rino.js"
+    />
+    <meta name="og:title" content="Redot Engine – Home" />
+    <meta
+      name="og:description"
+      content="Fast learning, preprocessing, intuitive web framework. Rino.js"
+    />
+    <!-- 
+    <meta name="og:site_name" content="Site Name" />
+    <meta name="og:url" content="https://sitename/" />
+    <meta name="og:image" content=""/>
+    -->
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <component rino-path="/common/header" />
+    <component rino-path="/common/sidebar" />
+
+    <main>
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2>Ignite Your Imagination 🔥</h2>
+            <p>
+              Download Redot Engine, the powerful platform for building 2D and
+              3D cross-platform games and interactive experiences.
+            </p>
+          </div>
+          <img alt="Product Image" src="/productImage.webp" />
+          <h2>Download Latest Redot Engine</h2>
+          <div id="release-downloads">
+            <div class="release-header">
+              <h3 id="release-title">Latest Release</h3>
+              <p class="release-meta" id="release-meta"></p>
+            </div>
+            <ul class="release-assets" id="release-assets"></ul>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        async function loadLatestReleaseDownloads() {
+          const jsonPath = "/data/latest-release.json";
+
+          const res = await fetch(jsonPath, { cache: "no-store" });
+          if (!res.ok)
+            throw new Error(`Failed to load ${jsonPath}: ${res.status}`);
+
+          const payload = await res.json();
+          const release = payload.data;
+
+          const titleEl = document.getElementById("release-title");
+          const metaEl = document.getElementById("release-meta");
+
+          const releaseName =
+            release.name || release.tag_name || "Latest Release";
+          const published = release.published_at
+            ? new Date(release.published_at).toLocaleDateString()
+            : "";
+
+          titleEl.textContent = releaseName;
+          metaEl.innerHTML = `
+    <a href="${
+      release.html_url
+    }" target="_blank" rel="noopener">View release notes</a>
+    ${published ? ` · Published: ${published}` : ""}
+  `;
+          const ul = document.getElementById("release-assets");
+          ul.innerHTML = "";
+
+          const assets = Array.isArray(release.assets) ? release.assets : [];
+
+          assets.sort((a, b) => (b.size || 0) - (a.size || 0));
+
+          for (const asset of assets) {
+            const li = document.createElement("li");
+            li.className = "release-asset";
+
+            const sizeMB = Number.isFinite(asset.size)
+              ? (asset.size / 1024 / 1024).toFixed(1) + " MB"
+              : "";
+
+            li.innerHTML = `
+      <a class="asset-link" href="${asset.browser_download_url}" target="_blank" rel="noopener">
+        ${asset.name}
+      </a> - 
+      <span class="asset-size">${sizeMB}</span>
+    `;
+
+            ul.appendChild(li);
+          }
+
+          if (assets.length === 0) {
+            ul.innerHTML = `<li class="release-empty">No downloadable files found.</li>`;
+          }
+        }
+
+        loadLatestReleaseDownloads().catch((err) => {
+          console.error(err);
+          const root = document.getElementById("release-downloads");
+          if (root)
+            root.innerHTML = `<p class="release-error">Failed to load downloads.</p>`;
+        });
+      </script>
+
+      <section class="section section-features">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2>Redot Engine’s Powerful Features ✨</h2>
+            <p>
+              Discover cutting-edge tools and capabilities designed to bring
+              your game ideas to life effortlessly.
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">🖼️</div>
+              <h3>Scene-driven design</h3>
+              <p>
+                Create reusable scenes with nodes, scripts, and clear game logic
+                via a powerful node hierarchy.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">💻</div>
+              <h3>Cross-platform development</h3>
+              <p>
+                Develop once and deploy to desktop, mobile, and web with ease.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">🟧</div>
+              <h3>2D & 3D engines</h3>
+              <p>
+                Build performant 2D games and immersive 3D worlds with the same
+                toolset.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">🔓</div>
+              <h3>Open Source experience</h3>
+              <p>
+                Fully open development where contributors collaborate and share
+                equally.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <component rino-path="/common/footer" />
+  </body>
+</html>

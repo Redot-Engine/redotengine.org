@@ -19,6 +19,7 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
     Consolas, "Liberation Mono", "Courier New", monospace;
   --font-logo: "Heebo", sans-serif;
+  --header-mobile-height: 60px;
 }
 
 *,
@@ -160,6 +161,27 @@ main {
   color: rgba(230, 230, 230, 0.7);
 }
 
+#header-menu-button {
+  color: #ffffff;
+  cursor: pointer;
+  height: 64px;
+  width: 64px;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  flex-shrink: 0;
+  flex-grow: 0;
+  transition: color 0.3s ease;
+}
+
+#header-menu-button:hover {
+  color: #cccccc;
+}
+
+#header-menu-button:active {
+  color: #999999;
+}
+
 /* ========== NAVIGATION ========== */
 
 .main-nav {
@@ -288,6 +310,44 @@ main {
   color: #ffffff;
 }
 
+#sidebar {
+  margin: 18px 10px 10px 10px;
+  width: 100%;
+  max-width: 236px;
+  z-index: 2147483643;
+  display: none;
+}
+
+#sidebar-left {
+  background-color: #ffffff;
+  color: #000000;
+  width: 100%;
+  max-width: 220px;
+  padding: 8px;
+  border-radius: 4px;
+  z-index: 2147483645;
+}
+
+#sidebar-left a {
+  color: #000000;
+  transition: color 0.3s ease;
+}
+
+#sidebar-left a:hover {
+  color: #666666;
+}
+
+#sidebar-left a:active {
+  color: #999999;
+}
+
+#sidebar-left ul,
+#sidebar-left ol {
+  margin: 0px;
+  padding: 0px 0px 0px 20px;
+  list-style: none;
+}
+
 /* ========== GENERIC SECTIONS (all pages) ========== */
 
 .section {
@@ -381,7 +441,51 @@ main {
 
 /* ========== RESPONSIVE ========== */
 
+@media all and (min-width: 0px) and (max-width: 320px) {
+  .brand-wordmark {
+    display: none;
+  }
+}
+
 @media (max-width: 880px) {
+  #header-menu-button {
+    display: flex;
+  }
+
+  .header-inner {
+    gap: 10px;
+    height: var(--header-mobile-height);
+  }
+
+  #sidebar {
+    max-width: 100%;
+    width: 100%;
+    height: calc(100% - 20px);
+    display: none;
+    position: fixed;
+    margin: 0px;
+  }
+
+  #sidebar-left {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    overflow-y: scroll;
+    border-radius: 0px;
+  }
+
+  #sidebar-right {
+    bottom: 0px;
+    left: 0px;
+    position: fixed;
+    height: calc(100% - var(--header-mobile-height));
+    width: 100%;
+    background-color: #000000;
+    opacity: 0.7;
+    z-index: 2147483644;
+  }
+
   .section-header h2,
   .section-header h1 {
     margin: 0 0 6px;
