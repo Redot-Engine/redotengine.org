@@ -5,16 +5,42 @@ export default {
 
         if (url.pathname.startsWith("/api/mirrorlists/"))
         {
-            const mirrorlist = url.pathname.slice("/api/mirrorlists/".length);
+            const canCache = request.method === "GET";
+            const cache = caches.default;
 
+            if (canCache)
+            {
+                const cached = await cache.match(request);
+                if (cached) return cached;
+            }
+
+            const mirrorlist = url.pathname.slice("/api/mirrorlists/".length);
             const res = handleMirrorlist(mirrorlist);
-            return new Response(JSON.stringify(res.body, null, 2), {
-                status: res.status,
-                headers: {
-                    "content-type": "application/json; charset=utf-8",
-                    "cache-control": "no-store",
-                },
+
+            const headers = new Headers({
+                "content-type": "application/json; charset=utf-8",
             });
+
+            if (res.status === 200)
+            {
+                headers.set("cache-control", "public, max-age=3600");
+            }
+            else
+            {
+                headers.set("cache-control", "no-store");
+            }
+
+            const response = new Response(JSON.stringify(res.body, null, 2), {
+                status: res.status,
+                headers,
+            });
+
+            if (canCache && res.status === 200)
+            {
+                ctx.waitUntil(cache.put(request, response.clone()));
+            }
+
+            return response;
         }
 
         return env.ASSETS.fetch(request);
@@ -30,7 +56,6 @@ function handleMirrorlist(mirrorlist)
 
     const mirrorlistName = mirrorlist.replace(/\.json$/i, "");
 
-    // Supports: 4.3.rc.1, 4.3.1.rc.1, 4.3.stable, 4.3.stable.2, optional ".mono"
     const regex = /^(\d+)\.(\d+)(\.(\d+))?\.(\w+)(\.(\d+))?(\.mono)?$/;
     const match = mirrorlistName.match(regex);
 
