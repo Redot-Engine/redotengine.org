@@ -3,19 +3,17 @@
   <head>
     <component rino-path="/common/head" />
     <link rel="stylesheet" href="/styles/index.css" />
-    <script type="text/javascript" src="/scripts/hello.js"></script>
-    <script type="text/javascript" src="/scripts/helloTS.js"></script>
     <script type="text/javascript" src="/scripts/bloggerPosts.js"></script>
 
     <title>Redot Engine – Home</title>
     <meta
       name="description"
-      content="Fast learning, preprocessing, intuitive web framework. Rino.js"
+      content="Redot Engine is an open-source game engine that enables developers to create stunning games with ease, offering powerful features, an active community, and a seamless development experience."
     />
     <meta name="og:title" content="Redot Engine – Home" />
     <meta
       name="og:description"
-      content="Fast learning, preprocessing, intuitive web framework. Rino.js"
+      content="Redot Engine is an open-source game engine that enables developers to create stunning games with ease, offering powerful features, an active community, and a seamless development experience."
     />
     <!-- 
     <meta name="og:site_name" content="Site Name" />
@@ -28,50 +26,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="header-inner">
-        <!-- Logo -->
-        <a href="/" class="brand-logo">
-          <div class="brand-logo-box">
-            <span class="brand-logo-mark">
-              <img
-                alt="Redot Engine Logo"
-                style="color: transparent"
-                src="/Redot Logo.svg"
-              />
-            </span>
-          </div>
-          <div class="brand-logo-text">
-            <span class="brand-wordmark">Redot Engine</span>
-            <span class="brand-tagline">Open-source game engine</span>
-          </div>
-        </a>
-
-        <!-- Nav -->
-        <nav class="main-nav" aria-label="Primary navigation">
-          <button class="nav-toggle" aria-label="Toggle navigation">
-            <span class="nav-toggle-line"></span>
-            <span class="nav-toggle-line"></span>
-          </button>
-
-          <ul class="nav-list">
-            <li>
-              <a href="index.html" class="nav-link nav-link-active">Home</a>
-            </li>
-            <li><a href="download.html" class="nav-link">Download</a></li>
-            <li><a href="licenses.html" class="nav-link">Licenses</a></li>
-            <li><a href="team.html" class="nav-link">Team</a></li>
-            <li><a href="contact.html" class="nav-link">Contact</a></li>
-            <li>
-              <a href="terms.html" class="nav-link nav-link-muted">Terms</a>
-            </li>
-            <li>
-              <a href="privacy.html" class="nav-link nav-link-muted">Privacy</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <component rino-path="/common/header" />
+    <component rino-path="/common/sidebar" />
 
     <main>
       <!-- Page-specific content goes here -->
@@ -90,7 +46,12 @@
 
             <div class="hero-actions">
               <a href="download.html" class="btn btn-primary">Download</a>
-              <a href="#features" class="btn btn-ghost">Explore features</a>
+              <a
+                href="https://docs.redotengine.org/en/stable/"
+                class="btn btn-ghost"
+              >
+                Documentation
+              </a>
             </div>
 
             <div class="hero-meta">
@@ -146,13 +107,13 @@
 
       <section class="section section-features">
         <div class="section-inner">
-          <header class="section-header">
+          <div class="section-header">
             <h2>Redot Engine’s Powerful Features ✨</h2>
             <p>
               Discover cutting-edge tools and capabilities designed to bring
               your game ideas to life effortlessly.
             </p>
-          </header>
+          </div>
 
           <div class="features-grid">
             <div class="feature-card">
@@ -262,27 +223,6 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <span class="footer-logo">
-            <img
-              alt="Redot Engine Logo"
-              width="12"
-              height="12"
-              src="/Redot Logo Black.svg"
-            />
-          </span>
-          <span class="footer-text">
-            © 2024-present by the contributors of the Redot community
-          </span>
-        </div>
-        <div class="footer-links">
-          <a href="licenses.html">Licenses</a>
-          <a href="terms.html">Terms</a>
-          <a href="privacy.html">Privacy</a>
-        </div>
-      </div>
-    </footer>
+    <component rino-path="/common/footer" />
   </body>
 </html>

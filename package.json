@@ -4,15 +4,16 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node fetchXMLFeedToJSON.js && node dev.js",
+    "dev": "node fetchJSON.js && node fetchXMLFeedToJSON.js && node dev.js",
     "generate": "node generate.js",
     "generate-all": "node generate.js && node sitemap.js && node feed.js",
     "generate-sitemap": "node generate.js && node sitemap.js",
     "sitemap": "node sitemap.js",
     "feed": "node feed.js",
     "backoffice": "node backoffice.js",
+    "latest-realease": "node fetchJSON.js",
     "blogger-feed": "node fetchXMLFeedToJSON.js",
-    "generate-redot": "node fetchXMLFeedToJSON.js && node generate.js && node sitemap.js"
+    "generate-redot": "node fetchJSON.js && node fetchXMLFeedToJSON.js && node generate.js && node sitemap.js"
   },
   "dependencies": {
     "rinojs": "^2.19.0",
