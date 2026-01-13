@@ -50,7 +50,7 @@ function json(obj, status = 200)
         status,
         headers: {
             "content-type": "application/json; charset=utf-8",
-            "cache-control": res.status === 200 ? "public, max-age=3600" : "no-store",
+            "cache-control": status === 200 ? "public, max-age=3600" : "no-store",
         },
     });
 }
