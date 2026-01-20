@@ -284,6 +284,7 @@
   position: relative;
   display: inline-block;
   padding-bottom: 0.4rem;
+  color-scheme: light;
 }
 
 /* subtle premium underline */

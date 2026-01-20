@@ -504,6 +504,7 @@ main {
   }
 
   #sidebar-left {
+    font-size: 1.1rem;
     position: relative;
     left: 0px;
     top: 0px;
