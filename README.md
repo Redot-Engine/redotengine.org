@@ -1,3 +1,7 @@
+
+We have moved to blazor based website as the management and game engine devs wants to maintain website with C#.
+So this repository is read-only from today.
+
 ## Project setup
 
 ```
